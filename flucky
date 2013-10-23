@@ -1,0 +1,7 @@
+#!/bin/bash
+# Open the first file whose filename matches the provided term.
+# Example: flucky hoge.py
+
+EDITOR=vim
+
+$EDITOR `git ls-files | grep $1 | cut -d ' ' -f1 | sed 's/:.*$//' | head -n1`
